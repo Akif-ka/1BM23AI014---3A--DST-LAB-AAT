@@ -1,0 +1,27 @@
+class QueueUsingTwoStacks:
+    def __init__(self):
+        self.stack1 = []  # Stack for enqueue
+        self.stack2 = []  # Stack for dequeue
+
+    def enqueue(self, item):
+        self.stack1.append(item)
+
+    def dequeue(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+        
+        if self.stack2:
+            return self.stack2.pop()
+        
+        return "Queue is empty"
+
+queue = QueueUsingTwoStacks()
+queue.enqueue(1)  # Enqueue 1
+queue.enqueue(2)  # Enqueue 2
+queue.enqueue(3)  # Enqueue 3
+print(queue.dequeue())
+print(queue.dequeue())
+queue.enqueue(4)
+print(queue.dequeue())
+print(queue.dequeue())
