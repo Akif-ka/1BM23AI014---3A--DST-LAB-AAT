@@ -11,6 +11,6 @@ def is_balanced(s):
     
     return "YES" if not stack else "NO"
 
-print(is_balanced("{[()]}"))
+print(is_balanced("{[(]]}"))
 print(is_balanced("{[(])}"))
 print(is_balanced("{{[[(())]]}}"))
