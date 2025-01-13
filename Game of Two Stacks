@@ -22,7 +22,7 @@ def two_stacks(x, a, b):
     return count
 
 
-x = 10
-a = [4, 2, 4, 6]
-b = [2, 1, 8, 5]
+x = 300
+a = [8, 22, 14, 16]
+b = [6, 4, 10, 13]
 print(two_stacks(x, a, b)) 
