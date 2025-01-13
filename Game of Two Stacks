@@ -1,0 +1,28 @@
+def two_stacks(x, a, b):
+    sum_so_far, count, i = 0, 0, 0
+
+    while i < len(a) and sum_so_far + a[i] <= x:
+        sum_so_far += a[i]
+        i += 1
+
+    count = i 
+    j = 0
+
+    while j < len(b):
+        sum_so_far += b[j]
+        j += 1
+
+        while sum_so_far > x and i > 0:
+            i -= 1
+            sum_so_far -= a[i]
+
+        if sum_so_far <= x:
+            count = max(count, i + j)
+
+    return count
+
+
+x = 10
+a = [4, 2, 4, 6]
+b = [2, 1, 8, 5]
+print(two_stacks(x, a, b)) 
